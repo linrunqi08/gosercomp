@@ -1,0 +1,169 @@
+# github.com/DataDog/zstd v1.4.1
+## explicit
+# github.com/Sereal/Sereal v0.0.0-20190618215532-0b8ac451a863
+## explicit
+# github.com/actgardner/gogen-avro/v10 v10.2.1
+## explicit; go 1.17
+github.com/actgardner/gogen-avro/v10/compiler
+github.com/actgardner/gogen-avro/v10/generator
+github.com/actgardner/gogen-avro/v10/parser
+github.com/actgardner/gogen-avro/v10/resolver
+github.com/actgardner/gogen-avro/v10/schema
+github.com/actgardner/gogen-avro/v10/util
+github.com/actgardner/gogen-avro/v10/vm
+github.com/actgardner/gogen-avro/v10/vm/types
+# github.com/alexflint/go-memdump v0.0.0-20160830180315-750db99b78d6
+## explicit
+# github.com/apache/thrift v0.17.0
+## explicit; go 1.18
+github.com/apache/thrift/lib/go/thrift
+# github.com/bytedance/sonic v1.5.0
+## explicit; go 1.15
+# github.com/chenzhuoyu/base64x v0.0.0-20211019084208-fb5309c8db06
+## explicit; go 1.15
+# github.com/ethereum/go-ethereum v1.9.3
+## explicit
+# github.com/francoispqt/gojay v1.2.13
+## explicit; go 1.12
+github.com/francoispqt/gojay
+# github.com/glycerine/zebrapack v4.1.0+incompatible
+## explicit
+github.com/glycerine/zebrapack/msgp
+# github.com/gogo/protobuf v1.3.2
+## explicit; go 1.15
+github.com/gogo/protobuf/proto
+# github.com/golang/protobuf v1.5.2
+## explicit; go 1.9
+github.com/golang/protobuf/proto
+# github.com/golang/snappy v0.0.4
+## explicit
+# github.com/google/flatbuffers v23.5.9+incompatible
+## explicit
+github.com/google/flatbuffers/go
+# github.com/hprose/hprose-golang v2.0.4+incompatible
+## explicit
+# github.com/josharian/intern v1.0.0
+## explicit; go 1.5
+github.com/josharian/intern
+# github.com/json-iterator/go v1.1.10
+## explicit; go 1.12
+# github.com/klauspost/cpuid/v2 v2.0.9
+## explicit; go 1.13
+# github.com/mailru/easyjson v0.7.7
+## explicit; go 1.12
+github.com/mailru/easyjson
+github.com/mailru/easyjson/buffer
+github.com/mailru/easyjson/jlexer
+github.com/mailru/easyjson/jwriter
+# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
+## explicit
+# github.com/modern-go/reflect2 v1.0.1
+## explicit
+# github.com/philhofer/fwd v1.1.2
+## explicit; go 1.15
+github.com/philhofer/fwd
+# github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7
+## explicit
+github.com/pquerna/ffjson/fflib/v1
+github.com/pquerna/ffjson/fflib/v1/internal
+# github.com/segmentio/encoding v0.1.0
+## explicit; go 1.13
+# github.com/shamaton/msgpack/v2 v2.1.0
+## explicit; go 1.15
+github.com/shamaton/msgpack/v2
+github.com/shamaton/msgpack/v2/def
+github.com/shamaton/msgpack/v2/ext
+github.com/shamaton/msgpack/v2/internal/common
+github.com/shamaton/msgpack/v2/internal/decoding
+github.com/shamaton/msgpack/v2/internal/encoding
+github.com/shamaton/msgpack/v2/time
+# github.com/shamaton/msgpackgen v0.3.0
+## explicit; go 1.13
+github.com/shamaton/msgpackgen/msgpack
+github.com/shamaton/msgpackgen/msgpack/dec
+github.com/shamaton/msgpackgen/msgpack/enc
+# github.com/thrift-iterator/go v0.0.0-20190402154806-9b5a67519118
+## explicit
+# github.com/tinylib/msgp v1.1.8
+## explicit; go 1.15
+github.com/tinylib/msgp/msgp
+# github.com/twitchyliquid64/golang-asm v0.15.1
+## explicit; go 1.13
+# github.com/ugorji/go/codec v1.1.7
+## explicit
+# github.com/v2pro/plz v0.0.0-20200805122259-422184e41b6e
+## explicit; go 1.14
+# github.com/v2pro/quokka v0.0.0-20171201153428-382cb39c6ee6
+## explicit
+# github.com/v2pro/wombat v0.0.0-20180402055224-a56dbdcddef2
+## explicit
+# github.com/vmihailenco/msgpack/v4 v4.3.0
+## explicit; go 1.11
+# github.com/vmihailenco/tagparser v0.1.1
+## explicit; go 1.13
+# github.com/ymz-ncnk/musgen v1.0.0
+## explicit; go 1.16
+github.com/ymz-ncnk/musgen
+# github.com/ymz-ncnk/musgo v1.0.0
+## explicit; go 1.16
+github.com/ymz-ncnk/musgo
+github.com/ymz-ncnk/musgo/errs
+github.com/ymz-ncnk/musgo/parser
+# golang.org/x/arch v0.0.0-20210923205945-b76863e36670
+## explicit; go 1.17
+# golang.org/x/mod v0.7.0
+## explicit; go 1.17
+golang.org/x/mod/internal/lazyregexp
+golang.org/x/mod/module
+golang.org/x/mod/semver
+# golang.org/x/net v0.3.0
+## explicit; go 1.17
+# golang.org/x/sys v0.3.0
+## explicit; go 1.17
+golang.org/x/sys/execabs
+# golang.org/x/tools v0.4.0
+## explicit; go 1.18
+golang.org/x/tools/go/ast/astutil
+golang.org/x/tools/imports
+golang.org/x/tools/internal/event
+golang.org/x/tools/internal/event/core
+golang.org/x/tools/internal/event/keys
+golang.org/x/tools/internal/event/label
+golang.org/x/tools/internal/fastwalk
+golang.org/x/tools/internal/gocommand
+golang.org/x/tools/internal/gopathwalk
+golang.org/x/tools/internal/imports
+golang.org/x/tools/internal/typeparams
+# google.golang.org/appengine v1.6.5
+## explicit; go 1.11
+# google.golang.org/protobuf v1.28.1
+## explicit; go 1.11
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/encoding/protowire
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+google.golang.org/protobuf/internal/detrand
+google.golang.org/protobuf/internal/encoding/defval
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/errors
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/internal/flags
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/impl
+google.golang.org/protobuf/internal/order
+google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/set
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/version
+google.golang.org/protobuf/proto
+google.golang.org/protobuf/reflect/protodesc
+google.golang.org/protobuf/reflect/protoreflect
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/descriptorpb
+# gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+## explicit

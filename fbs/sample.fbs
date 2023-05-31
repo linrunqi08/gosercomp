@@ -1,0 +1,29 @@
+// Example IDL file for our monster's schema.
+
+namespace LogGroup;
+
+table LogGroup {
+  logs: [Log];
+  logtag: [LogTag];
+  category:string;
+  topic:string;
+  source:string;
+  machineuuid:string;
+}
+
+table LogContent {
+  key: string;
+  value: string;
+}
+
+table LogTag {
+  key: string;
+  value: string;
+}
+
+table Log {
+  time: long;
+  contents: [LogContent];
+}
+
+root_type LogGroup;

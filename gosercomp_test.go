@@ -1,33 +1,117 @@
 package main
 
 import (
-	"bytes"
-	"context"
-	"encoding/json"
-	"encoding/xml"
-	"reflect"
 	"testing"
 
-	"github.com/Sereal/Sereal/Go/sereal"
-	memdump "github.com/alexflint/go-memdump"
-	thrift "github.com/apache/thrift/lib/go/thrift"
-	"github.com/bytedance/sonic"
-
-	// "github.com/bytedance/sonic"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/francoispqt/gojay"
-	goproto "github.com/gogo/protobuf/proto"
-	"github.com/golang/protobuf/proto"
-	hprose "github.com/hprose/hprose-golang/io"
-	jsoniter "github.com/json-iterator/go"
-	sjson "github.com/segmentio/encoding/json"
-	model "github.com/smallnest/gosercomp/model"
-	thrift_iter "github.com/thrift-iterator/go"
-	"github.com/thrift-iterator/go/general"
-	"github.com/ugorji/go/codec"
-	msgpackv4 "github.com/vmihailenco/msgpack/v4"
+	massagepack "github.com/smallnest/gosercomp/messagepack"
+	protocol "github.com/smallnest/gosercomp/protocol"
 )
 
+func BenchmarkMarshalPbLog(b *testing.B) {
+	logGroup := CreateLogGroup()
+	bb := make([]byte, 0, 1024)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		bb, _ = logGroup.Marshal()
+	}
+	b.ReportMetric(float64(len(bb)), "marshaledBytes")
+}
+
+func BenchmarkMarshalMPLog(b *testing.B) {
+	logGroup := CreateMpLogGroup()
+	bb := make([]byte, 0, 1024)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		bb, _ = logGroup.MarshalMsg(nil)
+	}
+	b.ReportMetric(float64(len(bb)), "marshaledBytes")
+}
+
+func BenchmarkUnMarshalPbLog(b *testing.B) {
+	logGroup := CreateLogGroup()
+	data, _ := logGroup.Marshal()
+
+	newLogGroup := &protocol.LogGroup{}
+
+	b.ResetTimer()
+	//count := 0
+	for i := 0; i < b.N; i++ {
+		newLogGroup.Unmarshal(data)
+		/*
+			for j := 0; j < len(newLogGroup.Logs); j++ {
+				for k := 0; k < len(newLogGroup.Logs[j].Contents); k++ {
+					_ = newLogGroup.Logs[j].Contents[k].Key
+					_ = newLogGroup.Logs[j].Contents[k].Value
+
+					//key := newLogGroup.Logs[j].Contents[k].Key
+					//value := newLogGroup.Logs[j].Contents[k].Value
+					//fmt.Println(key)
+					//fmt.Println(value)
+					//fmt.Println(count)
+					count++
+				}
+			}
+		*/
+	}
+}
+
+func BenchmarkUnMarshalMPLog(b *testing.B) {
+	logGroup := CreateMpLogGroup()
+	data, _ := logGroup.MarshalMsg(nil)
+
+	newLogGroup := &massagepack.LogGroup{}
+
+	b.ResetTimer()
+	//count := 0
+	for i := 0; i < b.N; i++ {
+		newLogGroup.UnmarshalMsg(data)
+		for j := 0; j < len(newLogGroup.Logs); j++ {
+			for k := 0; k < len(newLogGroup.Logs[j].Contents); k++ {
+				_ = newLogGroup.Logs[j].Contents[k].Key
+				_ = newLogGroup.Logs[j].Contents[k].Value
+
+				//key := newLogGroup.Logs[j].Contents[k].Key
+				//value := newLogGroup.Logs[j].Contents[k].Value
+				//fmt.Println(key)
+				//fmt.Println(value)
+				//fmt.Println(count)
+				//count++
+			}
+		}
+	}
+}
+
+func BenchmarkUnmarshalFbLogGroup(b *testing.B) {
+	data := CreateFpLogGroup()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = DecodeToFpLogGroup(data)
+	}
+}
+
+func BenchmarkCreatePbLogGroup(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = CreateLogGroup()
+	}
+}
+
+func BenchmarkCreateMpLogGroup(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = CreateMpLogGroup()
+	}
+}
+
+func BenchmarkCreateFbLogGroup(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = CreateFpLogGroup()
+	}
+}
+
+// other
+/*
 func BenchmarkMarshalByJson(b *testing.B) {
 	bb := make([]byte, 0, 1024)
 	b.ResetTimer()
@@ -851,4 +935,6 @@ func BenchmarkUnmarshalByMusgoUnsafe(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		result.UnmarshalMUSUnsafe(bb)
 	}
+
 }
+*/
